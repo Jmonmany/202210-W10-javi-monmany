@@ -9,7 +9,7 @@ export type GentlemanType = {
     selected: boolean;
 };
 
-export const gentlemen = [
+export const gentlemen: GentlemanType[] = [
     {
         id: 1,
         name: 'Bertin Osborne',

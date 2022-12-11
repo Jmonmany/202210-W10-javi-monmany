@@ -4,6 +4,13 @@ import { Header } from '../header/header';
 import { Info } from '../info/info';
 
 function App() {
+    
+    // const [gentlemen, ]
+    // const id = filterGentlemen;
+    const filterGentlemen = () => {
+        console.log('hola')
+    }
+    
     return (
         <div className="container">
             <Header></Header>
@@ -14,6 +21,7 @@ function App() {
                         <Gentleman
                             key={data.name}
                             gentlemanData={data}
+                            deleteGentleman={filterGentlemen}
                         ></Gentleman>
                     ))}
                 </ul>

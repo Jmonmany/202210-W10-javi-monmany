@@ -2,7 +2,20 @@ import { GentlemanType } from '../../types/gentleman';
 import { CheckButton } from '../buttons/check';
 import { DeleteButton } from '../buttons/delete';
 
-export function Gentleman({ gentlemanData }: { gentlemanData: GentlemanType }) {
+export function Gentleman({
+    gentlemanData,
+    deleteGentleman,
+}: {
+    gentlemanData: GentlemanType,
+    // deleteGentleman: number;
+    deleteGentleman: (arg0: number) => void;
+}) {
+    const sendGentlemanId = () => {
+        // deleteGentleman = gentlemanData.id;
+        console.log(gentlemanData.id);
+        deleteGentleman(gentlemanData.id);
+    };
+
     return (
         <li className="gentleman">
             <div className="gentleman__avatar-container">
@@ -35,7 +48,7 @@ export function Gentleman({ gentlemanData }: { gentlemanData: GentlemanType }) {
                 </ul>
             </div>
             <CheckButton></CheckButton>
-            <DeleteButton></DeleteButton>
+            <DeleteButton getGentleman={sendGentlemanId}></DeleteButton>
         </li>
     );
 }
