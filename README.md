@@ -40,3 +40,4 @@ Use the following components: App, Info, Button, Gentleman
     },
 ];
 ```
+Netlify: https://202210-w10-javi-monmany.netlify.app/
