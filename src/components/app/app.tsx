@@ -1,16 +1,16 @@
-import { gentlemen } from '../../types/gentleman';
+import { useState } from 'react';
+import { gentlemen as defaultGentleman } from '../../types/gentleman';
 import { Gentleman } from '../gentleman/gentleman';
 import { Header } from '../header/header';
 import { Info } from '../info/info';
 
 function App() {
-    
-    // const [gentlemen, ]
-    // const id = filterGentlemen;
-    const filterGentlemen = () => {
-        console.log('hola')
-    }
-    
+    const [gentlemen, setGentlemen] = useState(defaultGentleman);
+
+    const filterGentlemen = (_id: number) => {
+        setGentlemen(gentlemen.filter((item) => _id !== item.id));
+    };
+
     return (
         <div className="container">
             <Header></Header>

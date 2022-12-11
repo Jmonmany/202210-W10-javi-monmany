@@ -1,9 +1,7 @@
 export function DeleteButton({ getGentleman }: { getGentleman: () => void }) {
     const handlerClick = () => {
-        //
         getGentleman();
     };
-
     return (
         <>
             <i

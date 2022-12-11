@@ -6,13 +6,10 @@ export function Gentleman({
     gentlemanData,
     deleteGentleman,
 }: {
-    gentlemanData: GentlemanType,
-    // deleteGentleman: number;
+    gentlemanData: GentlemanType;
     deleteGentleman: (arg0: number) => void;
 }) {
     const sendGentlemanId = () => {
-        // deleteGentleman = gentlemanData.id;
-        console.log(gentlemanData.id);
         deleteGentleman(gentlemanData.id);
     };
 
