@@ -1,5 +1,3 @@
-/* eslint-disable prefer-const */
-import { useState } from 'react';
 import { GentlemanType } from '../../types/gentleman';
 import { SelectAllButton } from '../buttons/select.all';
 
@@ -7,7 +5,7 @@ export function Info({ gentlemenData }: { gentlemenData: GentlemanType[] }) {
     let counter = 0;
     // const [updatedCounter, serCounter] = useState()
     const countGentlemenSelected = () => {
-        gentlemenData.map((item) => (item.selected ? counter++ : item));
+        gentlemenData.forEach((item) => (item.selected ? counter++ : item));
     };
     countGentlemenSelected();
 
