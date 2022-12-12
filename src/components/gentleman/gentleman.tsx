@@ -18,7 +18,7 @@ export function Gentleman({
     const sendGentlemanCheck = () => {
         checkGentleman(gentlemanData.id);
     };
-    // console.log(gentlemanData)
+
     return (
         <li className="gentleman">
             <div className="gentleman__avatar-container">
@@ -50,7 +50,10 @@ export function Gentleman({
                     </li>
                 </ul>
             </div>
-            <CheckButton getGentleman={sendGentlemanCheck}></CheckButton>
+            <CheckButton
+                getGentleman={sendGentlemanCheck}
+                gentlmanSelect={gentlemanData.selected}
+            ></CheckButton>
             <DeleteButton getGentleman={sendGentlemanId}></DeleteButton>
         </li>
     );

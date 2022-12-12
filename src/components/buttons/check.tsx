@@ -1,29 +1,22 @@
-import { useState } from 'react';
-import '../../index.css';
-
 export function CheckButton({
     getGentleman,
+    gentlmanSelect,
 }: {
     getGentleman: () => void;
+    gentlmanSelect: boolean;
 }) {
-    const classState = {
-        check: 'gentleman__icon',
-    };
-
-    const [checkedClass, setCount] = useState(classState);
-
     const handlerCheck = () => {
-        setCount({
-            ...checkedClass,
-            check: 'gentleman__icon--checked',
-        });
         getGentleman();
     };
 
     return (
         <>
             <i
-                className={`icon ${checkedClass.check} fas fa-check`}
+                className={`icon ${
+                    gentlmanSelect
+                        ? 'gentleman__icon--checked'
+                        : 'gentleman__icon'
+                } fas fa-check`}
                 onClick={() => {
                     handlerCheck();
                 }}
