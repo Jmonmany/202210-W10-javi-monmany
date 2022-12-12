@@ -11,10 +11,18 @@ function App() {
         setGentlemen(gentlemen.filter((item) => _id !== item.id));
     };
 
+    const changeGentlemanSelected = (_id: number) => {
+        setGentlemen(
+            gentlemen.map((item) =>
+                item.id === _id ? { ...item, selected: true } : item
+            )
+        );
+    };
+
     return (
         <div className="container">
             <Header></Header>
-            <Info></Info>
+            <Info gentlemenData={gentlemen}></Info>
             <main className="main">
                 <ul className="gentlemen">
                     {gentlemen.map((data) => (
@@ -22,6 +30,7 @@ function App() {
                             key={data.name}
                             gentlemanData={data}
                             deleteGentleman={filterGentlemen}
+                            checkGentleman={changeGentlemanSelected}
                         ></Gentleman>
                     ))}
                 </ul>

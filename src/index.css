@@ -130,6 +130,12 @@ h2 {
     display: inline-flex;
 }
 
+.gentleman__icon--checked {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
 .gentleman.selected .gentleman__icon,
 .gentleman:hover .gentleman__icon {
     display: flex;

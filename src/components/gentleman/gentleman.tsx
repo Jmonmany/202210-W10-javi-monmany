@@ -5,14 +5,20 @@ import { DeleteButton } from '../buttons/delete';
 export function Gentleman({
     gentlemanData,
     deleteGentleman,
+    checkGentleman,
 }: {
     gentlemanData: GentlemanType;
     deleteGentleman: (arg0: number) => void;
+    checkGentleman: (arg0: number) => void;
 }) {
     const sendGentlemanId = () => {
         deleteGentleman(gentlemanData.id);
     };
 
+    const sendGentlemanCheck = () => {
+        checkGentleman(gentlemanData.id);
+    };
+    // console.log(gentlemanData)
     return (
         <li className="gentleman">
             <div className="gentleman__avatar-container">
@@ -44,7 +50,7 @@ export function Gentleman({
                     </li>
                 </ul>
             </div>
-            <CheckButton></CheckButton>
+            <CheckButton getGentleman={sendGentlemanCheck}></CheckButton>
             <DeleteButton getGentleman={sendGentlemanId}></DeleteButton>
         </li>
     );
