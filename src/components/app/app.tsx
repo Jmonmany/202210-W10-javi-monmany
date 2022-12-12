@@ -19,10 +19,19 @@ function App() {
         );
     };
 
+    const AllGentelmenSelected = () => {
+        setGentlemen(
+            gentlemen.map((item) => (item ? { ...item, selected: true } : item))
+        );
+    };
+
     return (
         <div className="container">
             <Header></Header>
-            <Info gentlemenData={gentlemen}></Info>
+            <Info
+                gentlemenData={gentlemen}
+                sendingAllGentlemen={AllGentelmenSelected}
+            ></Info>
             <main className="main">
                 <ul className="gentlemen">
                     {gentlemen.map((data) => (
